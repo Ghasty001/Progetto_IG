@@ -1,0 +1,84 @@
+
+scene clip(1,8000);
+scene position(0,0,-800);
+scene rotation(0,0,0);
+scene color(0,0,0);
+scene tfilter(3);
+scene cubemap;
+
+FLOOR = load("FLOOR");
+object FLOOR position(0,-140,0);
+object FLOOR rotation(0,0,0);
+object FLOOR diffuse(1,1,1);
+object FLOOR lighted(1);
+object FLOOR active(1);
+
+maxx = 300;
+C1 = load("CUBE");
+object C1 rotation(0,0,0);
+object C1 position(-maxx,0,0);
+object C1 diffuse(1,0,0);
+object C1 lighted(0);
+object C1 active(1);
+
+C1 = load("CUBE");
+object C1 rotation(0,0,0);
+object C1 position(+maxx,0,0);
+object C1 diffuse(0,1,0);
+object C1 lighted(0);
+object C1 active(1);
+
+C1 = load("CUBE");
+object C1 rotation(0,0,0);
+object C1 position(0,0,+maxx);
+object C1 diffuse(0,0,1);
+object C1 lighted(0);
+object C1 active(1);
+
+C1 = load("CUBE");
+object C1 rotation(0,0,0);
+object C1 position(0,+maxx+100,0);
+object C1 diffuse(1,1,0);
+object C1 active(1);
+
+CUBE = load("skydome");
+object CUBE scale(2.5);
+object CUBE rotation(0,0,0);
+object CUBE diffuse(1,1,1);
+object CUBE active(1);
+
+reFlect = new cTexgfx(CUBE);
+texgfx reFlect reflect(10,256,50);
+texgfx reFlect target(999);
+texgfx reFlect active(1);
+
+scene speed(10,1);
+scene keybd(1);
+scene focus(-2);
+scene start;
+
+new cRadio(-1);
+radio texreset;
+radio darklevel(darken);
+radio polydiv(2);
+radio litpower(5);
+radio lmsize(512);
+radio lmangle(120);
+radio savemode(0);
+radio calc;
+delete cRadio;
+
+yDeg	= 0;
+yRotat  = 0;
+while(1)
+{
+	yRotat -= 0.00050;
+	yDeg = (sin(yRotat)*(180.0 / 3.141592654));
+	object CUBE position(0,100 + yDeg,0);
+}
+
+
+
+
+
+
