@@ -6,6 +6,3 @@ https://dudka.cz/rrv/gallery
 
 Comparazione fra Ray-Tracing e Radiosity:
 https://www.cg.tuwien.ac.at/research/rendering/rays-radio/
-
-Metodo dell'emicubo:
-https://www.cg.tuwien.ac.at/courses/CG1/textblaetter/englisch/11%20Radiosity%20(engl).pdf
